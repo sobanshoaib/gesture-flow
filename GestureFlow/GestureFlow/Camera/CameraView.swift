@@ -6,13 +6,26 @@
 //
 
 import SwiftUI
+import CoreImage
 
 struct CameraView: View {
+    @Binding var image: CGImage?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geometry in
+            if let image = image {
+                Image(decorative: image, scale: 1)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+            } else {
+                ContentUnavailableView("No camera feed", systemImage: "xmark.circle.fill")
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+            }
+        }
     }
 }
 
 #Preview {
-    CameraView()
+    CameraView(image: .constant(nil))
 }

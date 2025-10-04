@@ -29,9 +29,22 @@
 		978CA6812E8E487F00B1A2DA /* GestureFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GestureFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		978CA7AB2E9170D700B1A2DA /* Exceptions for "GestureFlow" folder in "GestureFlow" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 978CA6672E8E487E00B1A2DA /* GestureFlow */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		978CA66A2E8E487E00B1A2DA /* GestureFlow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				978CA7AB2E9170D700B1A2DA /* Exceptions for "GestureFlow" folder in "GestureFlow" target */,
+			);
 			path = GestureFlow;
 			sourceTree = "<group>";
 		};

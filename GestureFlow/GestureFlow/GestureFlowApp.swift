@@ -25,7 +25,7 @@ struct GestureFlowApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CameraHomePage()
         }
         .modelContainer(sharedModelContainer)
     }
