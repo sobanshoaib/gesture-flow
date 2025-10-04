@@ -70,3 +70,9 @@ DerivedData/
 
 *.swiftsourceinfo
 
+
+*.xcuserdatad
+.DS_Store
+.AppleDouble
+.LSOverride
+
