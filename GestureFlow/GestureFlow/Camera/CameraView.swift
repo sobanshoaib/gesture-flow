@@ -19,7 +19,7 @@ struct CameraView: View {
                     .scaledToFit()
                     .frame(width: geometry.size.width, height: geometry.size.height)
             } else {
-                ContentUnavailableView("No camera feed", systemImage: "xmark.circle.fill")
+                ContentUnavailableView("No Camera Feed.", systemImage: "xmark.circle.fill")
                     .frame(width: geometry.size.width, height: geometry.size.height)
             }
         }

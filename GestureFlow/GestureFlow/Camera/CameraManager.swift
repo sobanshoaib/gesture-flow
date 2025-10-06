@@ -33,8 +33,7 @@ class CameraManager: NSObject {
     lazy var previewStream: AsyncStream<CGImage> = {
         AsyncStream { continuation in
             addToPreviewStream = { cgImage in
-                continuation.yield(cgImage
-                )
+                continuation.yield(cgImage)
             }
         }
     }()
@@ -64,6 +63,7 @@ class CameraManager: NSObject {
         }
         
         let videoOutput = AVCaptureVideoDataOutput()
+        self.videoOutput = videoOutput
         videoOutput.setSampleBufferDelegate(self, queue: sessionQueue)
         
         guard captureSession.canAddInput(deviceInput) else {
@@ -78,6 +78,10 @@ class CameraManager: NSObject {
         
         captureSession.addInput(deviceInput)
         captureSession.addOutput(videoOutput)
+        
+        if let connection = videoOutput.connection(with: .video), connection.isVideoOrientationSupported {
+            connection.videoOrientation = .portrait
+        }
     }
     
     private func startSession() async {
@@ -93,7 +97,7 @@ class CameraManager: NSObject {
 }
 
 extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
-    func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let currentFrame = sampleBuffer.cgImage else {
             return
         }
