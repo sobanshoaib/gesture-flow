@@ -76,3 +76,48 @@ DerivedData/
 .AppleDouble
 .LSOverride
 
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# PyTorch / ML models
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.tflite
+
+# Training outputs
+runs/
+logs/
+checkpoints/
+outputs/
+
+# Datasets
+data/
+dataset/
+datasets/
+
+
+# Kaggle
+kaggle.json
+
+# Experiment tracking
+wandb/
+mlruns/
+
