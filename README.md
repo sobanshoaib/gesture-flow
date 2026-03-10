@@ -26,4 +26,5 @@ GestureFlow is an iOS application that recognizes American Sign Language (ASL) a
 - CoreML  
 - Git
 
-I found a dataset in Kaggle and used it to train my model. Will reference it later.
+I found a dataset in Kaggle and used it to train my model.
+Link: https://www.kaggle.com/datasets/debashishsau/aslamerican-sign-language-aplhabet-dataset
