@@ -12,6 +12,12 @@ struct CameraHomePage: View {
     
     var body: some View {
         CameraView(image: $cameraVM.currentFrame)
+        Text(cameraVM.prediction)
+            .font(.title)
+            .padding()
+            .background(.black.opacity(0.5))
+            .cornerRadius(10)
+            .foregroundStyle(.white)
     }
 }
 

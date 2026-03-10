@@ -9,10 +9,10 @@ import Foundation
 import AVFoundation
 
 class CameraManager: NSObject {
-    private let captureSession = AVCaptureSession() //does real time campture
-    private var deviceInput: AVCaptureDeviceInput? //the media input
-    private var videoOutput: AVCaptureVideoDataOutput? //to have access to video frames
-    private let systemPreferredCamera = AVCaptureDevice.default(for: .video) //the device that provides streams of media
+    private let captureSession = AVCaptureSession() //does real time campture. director/central hub of camera setupt. connects input to output
+    private var deviceInput: AVCaptureDeviceInput? //session cannot connect directly to the device (avcapturedevice). avcapturedeviceinput acts like an adapter to connect capturesession and capturedevice.
+    private var videoOutput: AVCaptureVideoDataOutput? //what you want to get as output, so in this code it will be a video frame
+    private let systemPreferredCamera = AVCaptureDevice.default(for: .video) //the hadware device. device/physical camera that provides streams of media
     private var sessionQueue = DispatchQueue(label: "video.preview.session")
     
     //check if app is authorized to use the camera
@@ -41,6 +41,7 @@ class CameraManager: NSObject {
     override init() {
         super.init()
         
+        //configure and start are async functions, so need to include it in Task. these work in the background
         Task {
             await configureSession()
             await startSession()
@@ -49,6 +50,7 @@ class CameraManager: NSObject {
     
     private func configureSession() async {
         
+        //does 3 checks, checks if user permission is needed, checks device is available, and check if input can be created
         guard await isAuthorized,
               let systemPreferredCamera,
               let deviceInput = try? AVCaptureDeviceInput(device: systemPreferredCamera)
@@ -58,6 +60,7 @@ class CameraManager: NSObject {
         
         captureSession.beginConfiguration()
         
+        //run this when function ends
         defer {
             self.captureSession.commitConfiguration()
         }
@@ -97,6 +100,7 @@ class CameraManager: NSObject {
 }
 
 extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
+    //camera gives frame (output). recieveing one cmsamplebuffer per frame, which is a chunck of raw video data
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let currentFrame = sampleBuffer.cgImage else {
             return

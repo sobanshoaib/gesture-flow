@@ -11,6 +11,7 @@ import AVFoundation
 
 extension CMSampleBuffer {
     var cgImage: CGImage? {
+        //a raw pixel grid of an image
         let pixelBuffer: CVPixelBuffer? = CMSampleBufferGetImageBuffer(self)
         
         guard let imagePixelBuffer = pixelBuffer else {
