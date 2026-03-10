@@ -1,7 +1,5 @@
 # GestureFlow
 
-**IN PROGRESS**
-
 
 
 **Real-time American Sign Language (ASL) Alphabet Recognition App**  
