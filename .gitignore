@@ -124,4 +124,8 @@ kaggle.json
 wandb/
 mlruns/
 
-
+ASLModel.mlmodel
+ASLalphabetClassifier_Half.mlmodel
+coreml-venv/
+coreml-venv
+asl_cnn.pth
