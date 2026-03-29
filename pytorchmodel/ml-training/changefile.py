@@ -22,7 +22,7 @@ print("model traced")
 mlmodel = ct.convert(traced,
                      convert_to="neuralnetwork",
                     inputs=[
-                        ct.ImageType(name="image", shape=(1,1,224,224), color_layout=ct.colorlayout.GRAYSCALE, scale=1/127.5, bias=[-1.0])],
+                        ct.ImageType(name="image", shape=(1,1,224,224), color_layout=ct.colorlayout.GRAYSCALE, scale=1/127.5, bias=-1.0)],
                         classifier_config=ct.ClassifierConfig(labels),)
 
 print("converted to coreml")
