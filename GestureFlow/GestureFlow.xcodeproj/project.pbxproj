@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		973A96C72EB8198600985F20 /* ASLalphabetClassifier_Half.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 973A96C62EB8198600985F20 /* ASLalphabetClassifier_Half.mlmodel */; };
-		97925C2E2F60032800914C25 /* ASLModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 97925C2D2F60032800914C25 /* ASLModel.mlmodel */; };
+		97C349232F7A432F002C63DD /* ASLModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 97C349222F7A432F002C63DD /* ASLModel.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,11 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		973A96C62EB8198600985F20 /* ASLalphabetClassifier_Half.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ASLalphabetClassifier_Half.mlmodel; sourceTree = "<group>"; };
 		978CA6682E8E487E00B1A2DA /* GestureFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestureFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		978CA6772E8E487F00B1A2DA /* GestureFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GestureFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		978CA6812E8E487F00B1A2DA /* GestureFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GestureFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		97925C2D2F60032800914C25 /* ASLModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ASLModel.mlmodel; sourceTree = "<group>"; };
+		97C349222F7A432F002C63DD /* ASLModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ASLModel.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -95,12 +93,11 @@
 		978CA65F2E8E487D00B1A2DA = {
 			isa = PBXGroup;
 			children = (
-				973A96C62EB8198600985F20 /* ASLalphabetClassifier_Half.mlmodel */,
 				978CA66A2E8E487E00B1A2DA /* GestureFlow */,
 				978CA67A2E8E487F00B1A2DA /* GestureFlowTests */,
 				978CA6842E8E487F00B1A2DA /* GestureFlowUITests */,
 				978CA6692E8E487E00B1A2DA /* Products */,
-				97925C2D2F60032800914C25 /* ASLModel.mlmodel */,
+				97C349222F7A432F002C63DD /* ASLModel.mlmodel */,
 			);
 			sourceTree = "<group>";
 		};
@@ -258,8 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				973A96C72EB8198600985F20 /* ASLalphabetClassifier_Half.mlmodel in Sources */,
-				97925C2E2F60032800914C25 /* ASLModel.mlmodel in Sources */,
+				97C349232F7A432F002C63DD /* ASLModel.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

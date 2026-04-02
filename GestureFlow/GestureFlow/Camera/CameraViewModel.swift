@@ -8,6 +8,7 @@
 import Foundation
 import CoreImage
 import Observation
+import UIKit
 
 @Observable
 class CameraViewModel {
@@ -34,6 +35,30 @@ class CameraViewModel {
             }
         }
     }
+    
+    func testStaticImage() async {
+        guard let uiImage = UIImage(named: "S_test") else {
+            print("Could not load testA from assets")
+            return
+        }
+
+        guard let cgImage = uiImage.cgImage else {
+            print("Could not convert UIImage to CGImage")
+            return
+        }
+
+        if let prediction = await recognizer?.predict(from: cgImage) {
+            await MainActor.run {
+                self.prediction = prediction
+                self.currentFrame = cgImage
+            }
+            print("Static image prediction:", prediction)
+        } else {
+            print("No prediction for static image")
+        }
+    }
+    
+    
 }
 
 
