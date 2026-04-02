@@ -3,27 +3,29 @@
 
 
 **Real-time American Sign Language (ASL) Alphabet Recognition App**  
-Building with Swift, SwiftUI, AVFoundation, Vision, and CoreML
 
 ## Overview
 
-GestureFlow is an iOS application that recognizes American Sign Language (ASL) alphabet letters in real-time using the device’s camera. It uses AVFoundation for live video capture, Vision for image analysis, and a CoreML model to classify ASL hand gestures.
+GestureFlow is real-time iOS app that recognizes ASL letters using a custom PyTorch model, integrating AVFoundation and Vision for live video processing and on-device inference under controlled conditions
 
 ## Features
 
 - Real-time ASL alphabet recognition from live camera input
 - Video capture using AVFoundation
 - Frame analysis and hand detection using Vision
+- Trained dataset using Pytorch
 - Image classification with a CoreML model
 - SwiftUI-based responsive user interface
 
 ## Technologies
 
 - Swift  
-- SwiftUI  
+- SwiftUI
+- Python
 - AVFoundation  
 - Vision  
-- CoreML  
+- CoreML
+- Pytorch
 - Git
 
 I found a dataset in Kaggle and used it to train my model.
