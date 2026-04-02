@@ -129,3 +129,5 @@ ASLalphabetClassifier_Half.mlmodel
 coreml-venv/
 coreml-venv
 asl_cnn.pth
+
+*.mlmodel
