@@ -6,7 +6,9 @@
 
 ## Overview
 
-GestureFlow is real-time iOS app that recognizes ASL letters using a custom PyTorch model, integrating AVFoundation and Vision for live video processing and on-device inference under controlled conditions
+GestureFlow is real-time iOS app that recognizes ASL letters using a custom PyTorch model, integrating AVFoundation and Vision for live video processing and on-device inference under controlled conditions.
+
+Will keep improving it over time.
 
 ## Features
 
